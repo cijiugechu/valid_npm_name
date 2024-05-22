@@ -168,6 +168,16 @@ mod tests {
             ("http", ErrorKind::InBlackList),
             ("process", ErrorKind::InBlackList),
             ("CAPITAL-LETTERS", ErrorKind::ContainsCapitalLetter),
+            ("assert/strict", ErrorKind::InBlackList),
+            ("dns/promises", ErrorKind::InBlackList),
+            ("fs/promises", ErrorKind::InBlackList),
+            ("path/posix", ErrorKind::InBlackList),
+            ("path/win32", ErrorKind::InBlackList),
+            ("stream/consumers", ErrorKind::InBlackList),
+            ("stream/promises", ErrorKind::InBlackList),
+            ("stream/web", ErrorKind::InBlackList),
+            ("timers/promises", ErrorKind::InBlackList),
+            ("util/types", ErrorKind::InBlackList),
         ];
 
         for (name, _) in cases {
