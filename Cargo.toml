@@ -1,0 +1,13 @@
+[package]
+name = "valid_npm_name"
+authors = ["cijiugechu <cijiugechu@gmail.com>"]
+description = "Check whether a package name is a valid npm package name"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+keywords = ["npm", "package", "name", "validate"]
+categories = ["parser-implementations", "encoding", "value-formatting", "parsing"]
+
+[dependencies]
+phf = { version = "0.11.2", features = ["macros"] }
+bytes = "*"
