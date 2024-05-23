@@ -10,7 +10,6 @@ pub fn criterion_benchmark(c: &mut Criterion) {
             let _ = ValidName::parse(black_box(input)).unwrap();
         })
     });
-
 }
 
 criterion_group!(bench, criterion_benchmark);
