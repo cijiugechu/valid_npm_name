@@ -6,6 +6,8 @@ version = "0.1.0"
 edition = "2021"
 readme = "README.md"
 license = "Apache-2.0"
+repository = "https://github.com/cijiugechu/valid_npm_name"
+homepage = "https://github.com/cijiugechu/valid_npm_name"
 keywords = ["npm", "package", "name", "validate"]
 categories = ["parser-implementations", "encoding", "value-formatting", "parsing"]
 
