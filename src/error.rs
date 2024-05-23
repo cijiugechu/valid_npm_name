@@ -14,6 +14,7 @@ pub(super) enum ErrorKind {
     StartsWithAnUnderscore,
 }
 
+/// An error type for `valid_npm_name`
 #[derive(Clone)]
 pub struct Error {
     pub(super) kind: ErrorKind,
@@ -60,4 +61,5 @@ impl std::error::Error for Error {
     }
 }
 
+/// A `Result` typedef to use with the `valid_npm_name::error::Error` type
 pub type Result<T> = std::result::Result<T, Error>;

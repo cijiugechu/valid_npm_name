@@ -1,10 +1,3 @@
-# `valid_npm_name`
-
-Check whether a package name is a valid npm package name.
-
-## Usage
-
-```rust
 use valid_npm_name::ValidName;
 
 fn main() {
@@ -18,4 +11,3 @@ fn main() {
     let baz = ValidName::parse("baz").unwrap();
     assert_eq!("baz", baz.as_str());
 }
-```

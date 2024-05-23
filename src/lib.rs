@@ -1,10 +1,14 @@
+#![doc = include_str!("../README.md")]
+
 use std::ops::Deref;
 
 use constants::BLACK_LIST;
-use error::{Error, ErrorKind, Result};
+use error::ErrorKind;
 
 mod constants;
-pub mod error;
+mod error;
+
+pub use crate::error::{Error, Result};
 
 #[derive(Clone, Copy)]
 enum CheckResult {
@@ -76,14 +80,26 @@ fn validate(name: &str) -> Result<&str> {
     Ok(name)
 }
 
+/// Represents a valid npm package name.
 #[derive(Debug, Clone, Eq, PartialEq, Hash)]
 pub struct ValidName<'s>(&'s str);
 
 impl<'s> ValidName<'s> {
+    /// Converts a string slice into a `ValidName`.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use valid_npm_name::ValidName;
+    ///
+    /// let foo = ValidName::parse("foo").unwrap();
+    /// assert_eq!("foo", foo.as_str());
+    /// ```
     pub fn parse(name: &'s str) -> Result<Self> {
         validate(name).map(Self)
     }
 
+    /// Extracts a string slice containing the entire name.
     #[inline]
     pub fn as_str(&self) -> &str {
         self.0
