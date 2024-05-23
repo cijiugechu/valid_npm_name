@@ -1,6 +1,6 @@
 #![doc = include_str!("../README.md")]
 
-use std::ops::Deref;
+use std::{fmt, ops::Deref};
 
 use constants::BLACK_LIST;
 use error::ErrorKind;
@@ -119,6 +119,12 @@ impl AsRef<str> for ValidName<'_> {
     #[inline]
     fn as_ref(&self) -> &str {
         self.0
+    }
+}
+
+impl fmt::Display for ValidName<'_> {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        self.0.fmt(f)
     }
 }
 
