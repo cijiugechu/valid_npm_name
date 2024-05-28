@@ -1,5 +1,8 @@
 # `valid_npm_name`
 
+[![Cargo](https://img.shields.io/crates/v/valid_npm_name.svg)](https://crates.io/crates/valid_npm_name)
+[![Documentation](https://docs.rs/valid_npm_name/badge.svg)](https://docs.rs/valid_npm_name)
+
 Check whether a package name is a valid npm package name.
 
 ## Usage
