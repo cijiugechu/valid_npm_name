@@ -122,6 +122,14 @@ impl AsRef<str> for ValidName<'_> {
     }
 }
 
+impl<'s> TryFrom<&'s str> for ValidName<'s> {
+    type Error = Error;
+
+    fn try_from(value: &'s str) -> Result<Self> {
+        Self::parse(value)
+    }
+}
+
 impl fmt::Display for ValidName<'_> {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         self.0.fmt(f)
@@ -143,6 +151,9 @@ mod tests {
 
         let baz = ValidName::parse("baz").unwrap();
         assert_eq!("baz", baz.as_str());
+
+        let foo2: ValidName = "foo2".try_into().unwrap();
+        assert_eq!("foo2", foo2.as_str());
     }
 
     #[test]
